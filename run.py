@@ -33,7 +33,7 @@ model.add(stst.IdfAlignmentFeature())
 model.add(stst.PosAlignmentFeature())
 
 '''several WordEmbeddingFeatures'''
-word2vec_file = 'data/GoogleNews-vectors-negative300.txt'
+word2vec_file = 'data/GoogleNews-vectors-negative300.bin'
 paragram_file = 'data/paragram_300_sl999.txt'
 glove100_file = 'data/glove.6B.100d.txt'
 glove300_file = 'data/glove.840B.300d.txt'
