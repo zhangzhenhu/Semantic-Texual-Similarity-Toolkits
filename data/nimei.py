@@ -54,7 +54,7 @@ def main(options):
             line = ['ai-lab', 'test', '2017', line[0], score, line[1], line[2]]
             print('\t'.join(line))
 
-    print(sys.stderr, "total %d hit %d" % (total_count, hit_count))
+    print("total %d hit %d" % (total_count, hit_count), file=sys.stderr)
 
 
 if __name__ == "__main__":
