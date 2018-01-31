@@ -1,5 +1,10 @@
+#!/usr/bin/env bash
 mkdir data
 cd data
+
+#wget -O 'glove.840B.300d.zip'  'http://nlp.stanford.edu/data/glove.840B.300d.zip'
+#wget -O 'glove.6B.zip' 'http://nlp.stanford.edu/data/glove.6B.zip'
+#wget -c "https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz"
 
 # download the STSBenchmark Dataset
 wget http://ixa2.si.ehu.es/stswiki/images/4/48/Stsbenchmark.tar.gz
