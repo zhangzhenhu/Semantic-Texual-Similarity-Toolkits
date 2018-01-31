@@ -33,17 +33,17 @@ model.add(stst.IdfAlignmentFeature())
 model.add(stst.PosAlignmentFeature())
 
 '''several WordEmbeddingFeatures'''
-word2vec_file = 'resource/GoogleNews-vectors-negative300.txt'
-paragram_file = 'resource/paragram_300_sl999.txt'
-glove100_file = 'resource/glove.6B.100d.txt'
-glove300_file = 'resource/glove.840B.300d.txt'
+word2vec_file = 'data/GoogleNews-vectors-negative300.txt'
+paragram_file = 'data/paragram_300_sl999.txt'
+glove100_file = 'data/glove.6B.100d.txt'
+glove300_file = 'data/glove.840B.300d.txt'
 model.add(stst.MinAvgMaxEmbeddingFeature('word2vec', 300, word2vec_file, 'word', binary=True))
-model.add(stst.MinAvgMaxEmbeddingFeature('paragram', 300, paragram_file, 'word'))
+# model.add(stst.MinAvgMaxEmbeddingFeature('paragram', 300, paragram_file, 'word'))
 model.add(stst.MinAvgMaxEmbeddingFeature('glove100', 100, glove100_file, 'word'))
 model.add(stst.MinAvgMaxEmbeddingFeature('glove300', 300, glove300_file, 'word'))
 #
 model.add(stst.MinAvgMaxEmbeddingFeature('word2vec', 300, word2vec_file, 'lemma', binary=True))
-model.add(stst.MinAvgMaxEmbeddingFeature('paragram', 300, paragram_file, 'lemma'))
+# model.add(stst.MinAvgMaxEmbeddingFeature('paragram', 300, paragram_file, 'lemma'))
 model.add(stst.MinAvgMaxEmbeddingFeature('glove100', 100, glove100_file, 'lemma'))
 model.add(stst.MinAvgMaxEmbeddingFeature('glove300', 300, glove300_file, 'lemma'))
 
