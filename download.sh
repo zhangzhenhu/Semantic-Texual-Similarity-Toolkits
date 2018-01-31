@@ -16,8 +16,8 @@ wget http://nlp.stanford.edu/software/stanford-corenlp-full-2015-12-09.zip
 unzip stanford-corenlp-full-2015-12-09.zip
 
 # lanch the stanford CoreNLP
-cd stanford-corenlp-full-2015-12-09/
-java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer
+#cd stanford-corenlp-full-2015-12-09/
+#java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer
 # after this, you will find stanfordCoreNLP server at http://localhost:9000/
 
 # install requirements
