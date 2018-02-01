@@ -5,6 +5,7 @@ nlp = stst.StanfordNLP('http://localhost:9000')
 
 def train_sts(model):
     train_file = './data/stsbenchmark/sts-train.csv'
+    # 利用StanfordNLP对文本数据进行预处理，包括切词、标注、句法解析等等
     train_instances = stst.load_parse_data(train_file, nlp)
     model.train(train_instances, train_file)
 
@@ -18,7 +19,7 @@ def dev_sts(model):
     return dev_pearsonr
 
 def test_sts(model):
-    test_file = './data/stsbenchmark/sts-test.csv'
+    test_file = './data/stsbenchmark/test_ai-lab.csv'
     test_instances = stst.load_parse_data(test_file, nlp)
     model.test(test_instances, test_file)
     test_pearsonr = stst.eval_output_file(model.output_file)

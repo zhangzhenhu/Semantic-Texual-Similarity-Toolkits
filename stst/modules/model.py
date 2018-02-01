@@ -3,7 +3,7 @@ from __future__ import print_function
 
 import os
 import random
-
+import sys
 from stst import utils, config
 from stst.modules.features import Feature
 
@@ -27,8 +27,8 @@ class Model(object):
 
         self.output_file = None  # config.OUTPUT_DIR + '/' + self.model_name + '.output.txt'
 
-        self.get_output_file = lambda train_file: config.OUTPUT_DIR + '/' + self.model_name + '/' + os.path.basename(train_file)
-
+        self.get_output_file = lambda train_file: config.OUTPUT_DIR + '/' + self.model_name + '/' + os.path.basename(
+            train_file)
 
     def add(self, feature):
         self.feature_list.append(feature)
@@ -37,6 +37,10 @@ class Model(object):
         """
         out_list is used to sub train_instances from all train_instances
         if only happen when all faetures have been made.
+        :param train_instances: 经过StanfordNLP解析（分词、标注、句法结构等等）过的数据
+        :param train_file: 训练数据原始文件
+        :param out_list:
+        :return:
         """
 
         ''' 1. Extract Features '''
@@ -83,6 +87,11 @@ class Model(object):
 
     def make_feature_file(self, train_instances, train_file, dev=False):
         """
+
+        :param train_instances:
+        :param train_file:
+        :param dev:
+        :return:
         TODO. similar to feature, write to file
         """
 
@@ -101,7 +110,8 @@ class Model(object):
                 feature_strings.append(feature_string)
                 feature_dimensions.append(feature_dimension)
                 sum_feature_dimension += feature_dimension
-                print(feature_class.feature_name, feature_dimension, sum_feature_dimension)
+                print('[Extract Features]', 'Feature', feature_class.feature_name, feature_dimension,
+                      sum_feature_dimension)
 
             elif isinstance(feature_class, Model):
                 if dev:
@@ -115,7 +125,7 @@ class Model(object):
                 feature_dimensions.append(1)
 
                 sum_feature_dimension += 1
-                print(feature_class.feature_name, 1, sum_feature_dimension)
+                print('[Extract Features]', 'Model', feature_class.feature_name, 1, sum_feature_dimension)
 
         ''' Merge Features'''
         merged_feature_string_list = []
