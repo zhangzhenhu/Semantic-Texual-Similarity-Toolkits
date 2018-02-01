@@ -68,18 +68,20 @@ model.add(stst.POSLemmaMatchFeature(stopwords=True))
 model.add(stst.POSLemmaMatchFeature(stopwords=False))
 # model.add(stst.POSNounEmbeddingFeature('word2vec', 300, word2vec_file))
 model.add(stst.POSNounEditFeature())
+# 有异常
 # model.add(stst.POSTreeKernelFeature())
-
+# 有异常
 # model.add(stst.Doc2VecGlobalFeature())
 
 '''several NegativeFeature'''
 model.add(stst.NegativeFeature())
-
+# 有异常
 # model.add(stst.AsiyaMTFeature())
 
 model.add(stst.SequenceFeature())
 model.add(stst.SentenceFeature())
-model.add(stst.ShortSentenceFeature())
+# 有异常
+#model.add(stst.ShortSentenceFeature())
 
 # sts_tools.feature_importance(model)
 sts_tools.train_sts(model)
