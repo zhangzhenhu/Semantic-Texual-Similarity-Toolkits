@@ -12,8 +12,12 @@ tar zxvf Stsbenchmark.tar.gz
 rm -rf Stsbenchmark.tar.gz
 
 # download the stanford CoreNLP 3.6.0
-wget http://nlp.stanford.edu/software/stanford-corenlp-full-2015-12-09.zip
-unzip stanford-corenlp-full-2015-12-09.zip
+#wget http://nlp.stanford.edu/software/stanford-corenlp-full-2015-12-09.zip
+#unzip stanford-corenlp-full-2015-12-09.zip
+wegt -O 'stanford-corenlp-full.zip' 'http://nlp.stanford.edu/software/stanford-corenlp-full-2017-06-09.zip'
+unzip stanford-corenlp-full.zip
+cd stanford-corenlp-full/
+wget -O 'stanford-chinese-corenlp-models.jar' 'http://nlp.stanford.edu/software/stanford-chinese-corenlp-2017-06-09-models.jar'
 
 # lanch the stanford CoreNLP
 #cd stanford-corenlp-full-2015-12-09/
