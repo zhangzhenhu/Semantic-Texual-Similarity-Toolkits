@@ -45,7 +45,7 @@ def main(options):
             line = line.strip().split('\t')
             # key = line[3].strip() + line[4].strip()
             score = line[0]
-            out_file.write('%s\t%s\n' % (db[index], score))
+            out_file.write('%s %s\n' % (db[index], score))
             index += 1
     out_file.close()
 
