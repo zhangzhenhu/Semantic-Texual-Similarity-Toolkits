@@ -4,17 +4,21 @@ import stst
 import sts_tools
 
 # Define Model
+# 用sklearn的GBRT作为回归模型
 gb = stst.Classifier(stst.GradientBoostingRegression())
 model = stst.Model('S1-gb', gb)
 
 # avg = stst.Classifier(stst.AverageEnsemble())
 # model = stst.Model('S1-avg', avg)
 
+# 各种特征抽取
 # Add features to the Model
 # model.add(stst.WeightednGramOverlapFeature(type='lemma'))
 
 '''several nGramOverlapFeatures'''
+""""""
 model.add(stst.nGramOverlapFeature(type='word'))
+# lemma 原型词
 model.add(stst.nGramOverlapFeature(type='lemma'))
 model.add(stst.nCharGramOverlapFeature(stopwords=False))
 model.add(stst.nCharGramOverlapFeature(stopwords=True))

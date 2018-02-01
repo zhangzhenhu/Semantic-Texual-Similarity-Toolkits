@@ -35,13 +35,13 @@ def main(options):
     with open('../data/test_ai-lab.txt') as fh:
         for line in fh:
             line = line.strip().split('\t')
-            key = line[1] + line[2]
+            key = line[1].strip() + line[2].strip()
             db[key] = line[0]
     out_file = open('submission_sample', 'w')
     with open('outputs/S1-gb/test_ai-lab.csv') as fh:
         for line in fh:
             line = line.strip().split('\t')
-            key = line[3] + line[4]
+            key = line[3].strip() + line[4].strip()
             score = line[0]
             out_file.write('%s\t%s\n' % (db[key], score))
 
