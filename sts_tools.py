@@ -19,7 +19,7 @@ def dev_sts(model):
     return dev_pearsonr
 
 def test_sts(model):
-    test_file = './data/stsbenchmark/sts-test.csv'
+    test_file = './data/stsbenchmark/test_ai-lab.csv'
     test_instances = stst.load_parse_data(test_file, nlp)
     model.test(test_instances, test_file)
     test_pearsonr = stst.eval_output_file(model.output_file)
