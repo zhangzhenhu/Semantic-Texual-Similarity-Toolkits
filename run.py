@@ -85,7 +85,7 @@ model.add(stst.SentenceFeature())
 
 # sts_tools.feature_importance(model)
 sts_tools.train_sts(model)
-sts_tools.dev_sts(model)
+# sts_tools.dev_sts(model)
 sts_tools.test_sts(model)
 
 # sts_tools.hill_climbing(model)
